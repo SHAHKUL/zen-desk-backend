@@ -82,7 +82,7 @@ authController.put("/task/:id",authenticate, async (req, res) => {
 });
 
 
-authController.delete("/remove/:id",authenticate, async (req, res) => {
+authController.delete("/remove/:id",async (req, res) => {
   const { id } = req.params;
   try {
     const user = await Admin.findByIdAndDelete({ _id: id });
