@@ -13,6 +13,16 @@ classController.get("/get",authenticate, async (req, res) => {
   }
 });
 
+classController.get("/get/:id",authenticate, async (req, res) => {
+  const {id}=req.params
+  try {
+    const user = await Class.findById(id);
+    res.json(user);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
+
 classController.post("/create",authenticate, async (req, res) => {
   try {
     const data = await Class.create({ ...req.body });

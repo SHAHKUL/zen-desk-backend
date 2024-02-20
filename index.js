@@ -28,7 +28,6 @@ mongoose
     console.log(err);
   });
 
-app.get("/", (req,res) => {
-  res.json({message:"server running successfully!!!"})
-
+app.get("/", (req, res) => {
+  res.json({ message: "server running successfully!!!" });
 });
